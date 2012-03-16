@@ -1,0 +1,47 @@
+PIPE
+Last Name, First Name, Middle Initial, Gender, Favorite Color, Date Of Birth
+
+Smith | Steve | D | M | Red | 3-3-1985
+Bonk | Radek | S | M | Green | 6-3-1975
+Bouillon | Francis | G | M | Blue | 6-3-1975
+
+SPACE
+Last Name, First Name, Middle Initial, Gender, Date Of Birth, Favorite Color
+
+Kournikova Anna F F 6-3-1975 Red
+Hingis Martina M F 4-2-1979 Green
+Seles Monica H F 12-2-1973 Black
+
+COMMA
+Last Name, First Name, Gender, Favorite Color, Date Of Birth
+
+Abercrombie, Neil, Male, Tan, 2/13/1943
+Bishop, Timothy, Male, Yellow, 4/23/1967
+Kelly, Sue, Female, Pink, 7/12/1959
+
+OUTPUT
+Last Name, First Name, Gender, Date Of Birth, Favorite Color.
+
+Hingis Martina Female 4/2/1979 Green
+Kelly Sue Female 7/12/1959 Pink
+Kournikova Anna Female 6/3/1975 Red
+
+The merged list should be printed 3 times (these are views):
+by Gender (Female before Male), then Last Name ascending.
+by Date, ascending.
+by Last Name, descending.
+
+TreeMap(Comparator<? super K> comparator) 
+  Constructs a new, empty tree map, ordered according to the given comparator.
+  
+construct 3 Comparators:
+//Naming convention assumes Asc, unless "Desc" postfix
+TreeMap(GenderLast)	gl
+TreeMap(Date)		d
+TreeMap(LastDesc)	ld
+
+foreach Person
+	insert gl
+	insert d
+	insert ld
+	
